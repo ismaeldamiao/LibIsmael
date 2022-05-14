@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Script to compile libIsmael
+
+cd "$(dirname $0)"
+
+# Compile implementations
+#    with gcc
+gcc -std=c99 -g -c ismael.c -o libismael.o
+
+# Make a static library with archiver
+ar rs libismael.a libismael.o
+
+# Remove object files
+rm libismael.o
+
+exit 0
